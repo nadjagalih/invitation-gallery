@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lensaku Creative — Katalog Undangan Digital</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#16231C',
+          inksoft: '#22352A',
+          paper: '#FBF6EC',
+          gold: '#C9A227',
+          goldsoft: '#E4C567',
+          maroon: '#7A2E2E',
+          sage: '#5C6E5F',
+        },
+        fontFamily: {
+          display: ['"Fraunces"', 'serif'],
+          body: ['"Plus Jakarta Sans"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+  html { scroll-behavior: smooth; }
+  body { background: #FBF6EC; }
+
+  .parang-line {
+    background-image: repeating-linear-gradient(135deg, transparent 0 10px, rgba(201,162,39,0.55) 10px 11px, transparent 11px 26px);
+  }
+  .parang-line-soft {
+    background-image: repeating-linear-gradient(135deg, transparent 0 14px, rgba(251,246,236,0.18) 14px 15px, transparent 15px 34px);
+  }
+
+  .phone-frame {
+    aspect-ratio: 9 / 18;
+    border-radius: 1.1rem;
+    box-shadow: 0 12px 30px -12px rgba(22,35,28,0.45), inset 0 0 0 2px rgba(255,255,255,0.12);
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cat-chip[data-active="true"] {
+    background-color: #16231C;
+    color: #FBF6EC;
+    border-color: #16231C;
+  }
+
+  .price-strike { text-decoration: line-through; text-decoration-color: rgba(90,90,90,0.6); }
+
+  ::selection { background: #C9A227; color: #16231C; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #C9A227;
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body class="font-body text-ink antialiased pb-24">
+
+  <!-- ============ HERO ============ -->
+  <header class="relative bg-ink text-paper overflow-hidden">
+    <div class="absolute inset-0 parang-line-soft opacity-60"></div>
+    <div class="relative max-w-6xl mx-auto px-6 pt-10 pb-20 md:pt-14 md:pb-28">
+      <div class="flex items-center justify-between mb-16 md:mb-24">
+        <div class="flex items-center gap-2">
+          <span class="h-8 w-8 rounded-full border border-goldsoft/70 flex items-center justify-center font-display italic text-goldsoft text-sm">L</span>
+          <span class="font-display italic tracking-wide text-lg">Lensaku Creative</span>
+        </div>
+        <a href="#fitur" class="hidden sm:inline text-sm text-paper/70 hover:text-goldsoft transition-colors">Fitur RSVPKIT</a>
+      </div>
+
+      <p class="font-mono uppercase tracking-[0.2em] text-xs text-goldsoft mb-5">Special Web Invitation</p>
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.08] max-w-3xl">
+        Undangan yang <span class="italic text-goldsoft">membuka cerita</span> kalian, jauh sebelum tamu tiba di hari-H.
+      </h1>
+      <p class="mt-6 max-w-xl text-paper/75 text-base md:text-lg leading-relaxed">
+        Kami siap membuat momen bahagia kamu lebih berkesan — pilih dari puluhan desain,
+        kirim link personal ke setiap tamu, dan biarkan mereka membuka kabar baik dengan caranya sendiri.
+      </p>
+
+      <div class="mt-9 flex flex-col sm:flex-row gap-3">
+        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20konsultasi%20undangan%20digital"
+           class="inline-flex items-center justify-center gap-2 bg-goldsoft text-ink font-medium px-6 py-3 rounded-full hover:bg-gold transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.07-1.32A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.28 1.18-1.77 1.24-.45.06-.98.09-1.58-.1-.36-.11-.83-.27-1.42-.53-2.5-1.08-4.13-3.6-4.26-3.77-.12-.16-1.02-1.36-1.02-2.6s.65-1.84.88-2.09c.22-.24.49-.31.65-.31.16 0 .33 0 .47.01.15.01.35-.06.55.42.22.53.74 1.83.8 1.96.06.13.1.28.02.45-.08.16-.13.26-.25.4-.13.14-.27.31-.38.42-.13.13-.26.27-.11.53.15.26.66 1.09 1.42 1.76.98.87 1.8 1.14 2.06 1.27.26.13.41.11.56-.06.16-.18.65-.75.82-1.01.17-.26.34-.21.57-.13.23.08 1.46.69 1.72.82.26.13.43.19.49.3.06.11.06.63-.16 1.25z"/></svg>
+          Konsultasi via WhatsApp
+        </a>
+        <a href="#katalog"
+           class="inline-flex items-center justify-center gap-2 border border-paper/25 px-6 py-3 rounded-full hover:border-goldsoft hover:text-goldsoft transition-colors">
+          Lihat Katalog Desain
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FILTER + KATALOG ============ -->
+  <main id="katalog" class="max-w-6xl mx-auto px-6">
+
+    <div class="sticky top-0 z-30 bg-paper/95 backdrop-blur -mx-6 px-6 py-4 border-b border-ink/10">
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar" id="filterBar">
+        <button data-cat="semua" data-active="true" class="cat-chip whitespace-nowrap text-sm px-4 py-1.5 rounded-full border border-ink/15 transition-colors">Semua</button>
+        <button data-cat="adat" class="cat-chip whitespace-nowrap text-sm px-4 py-1.5 rounded-full border border-ink/15 transition-colors">Art Adat</button>
+        <button data-cat="nonadat" class="cat-chip whitespace-nowrap text-sm px-4 py-1.5 rounded-full border border-ink/15 transition-colors">Art Non Adat</button>
+        <button data-cat="exclusive" class="cat-chip whitespace-nowrap text-sm px-4 py-1.5 rounded-full border border-ink/15 transition-colors">Tema Exclusive</button>
+        <button data-cat="storyig" class="cat-chip whitespace-nowrap text-sm px-4 py-1.5 rounded-full border border-ink/15 transition-colors">Story IG</button>
+      </div>
+    </div>
+
+    <!-- Perbandingan RSVP vs RSVPKIT -->
+    <section id="fitur" class="py-16 md:py-20">
+      <p class="font-mono uppercase tracking-[0.2em] text-xs text-sage mb-3">Kenapa RSVPKIT</p>
+      <h2 class="font-display text-2xl md:text-3xl mb-10 max-w-lg">Dua cara tamu bilang “iya, aku datang” — pilih yang sesuai budget.</h2>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="rounded-2xl border border-ink/10 bg-white/60 p-7">
+          <h3 class="font-display text-xl mb-1">RSVP Biasa</h3>
+          <p class="text-sm text-sage mb-5">Sudah termasuk di semua paket</p>
+          <ul class="space-y-3 text-sm">
+            <li class="flex gap-2"><span class="text-sage mt-0.5">✓</span> Form nama &amp; konfirmasi hadir/tidak</li>
+            <li class="flex gap-2"><span class="text-sage mt-0.5">✓</span> Jumlah tamu per konfirmasi</li>
+            <li class="flex gap-2"><span class="text-sage mt-0.5">✓</span> Kolom ucapan &amp; doa publik</li>
+            <li class="flex gap-2 text-ink/35"><span class="mt-0.5">–</span> Rekap kehadiran manual</li>
+          </ul>
+        </div>
+
+        <div class="rounded-2xl border border-gold/40 bg-ink text-paper p-7 relative overflow-hidden">
+          <div class="absolute inset-0 parang-line-soft opacity-30"></div>
+          <div class="relative">
+            <span class="inline-block text-xs font-mono uppercase tracking-wider text-goldsoft border border-goldsoft/50 rounded-full px-2.5 py-0.5 mb-3">Add-on</span>
+            <h3 class="font-display text-xl mb-1">RSVPKIT</h3>
+            <p class="text-sm text-paper/60 mb-5">Untuk yang ingin tamu tak sekadar mengisi form</p>
+            <ul class="space-y-3 text-sm">
+              <li class="flex gap-2"><span class="text-goldsoft mt-0.5">✓</span> Link personal per tamu (nama otomatis tampil)</li>
+              <li class="flex gap-2"><span class="text-goldsoft mt-0.5">✓</span> Statistik kehadiran realtime</li>
+              <li class="flex gap-2"><span class="text-goldsoft mt-0.5">✓</span> Export daftar tamu ke spreadsheet</li>
+              <li class="flex gap-2"><span class="text-goldsoft mt-0.5">✓</span> Dashboard klien untuk pantau ucapan &amp; RSVP</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid Produk -->
+    <section class="pb-24">
+      <div class="flex items-end justify-between mb-8">
+        <h2 class="font-display text-2xl md:text-3xl">Pilih Tema Undangan</h2>
+        <span class="text-sm text-sage font-mono" id="countLabel">8 desain</span>
+      </div>
+
+      <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+  </main>
+
+  <!-- ============ STICKY BOTTOM NAV ============ -->
+  <nav class="fixed bottom-0 inset-x-0 z-40 bg-ink text-paper border-t border-goldsoft/20">
+    <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="h-7 w-7 rounded-full border border-goldsoft/60 flex items-center justify-center font-display italic text-goldsoft text-xs">L</span>
+        <span class="text-sm text-paper/70 hidden sm:inline">Lensaku Creative</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#fitur" class="flex flex-col items-center text-xs text-paper/70 hover:text-goldsoft transition-colors">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
+          Fitur
+        </a>
+        <a href="https://wa.me/6281234567890" class="flex flex-col items-center text-xs text-goldsoft">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.07-1.32A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.28 1.18-1.77 1.24-.45.06-.98.09-1.58-.1-.36-.11-.83-.27-1.42-.53-2.5-1.08-4.13-3.6-4.26-3.77-.12-.16-1.02-1.36-1.02-2.6s.65-1.84.88-2.09c.22-.24.49-.31.65-.31.16 0 .33 0 .47.01.15.01.35-.06.55.42.22.53.74 1.83.8 1.96.06.13.1.28.02.45-.08.16-.13.26-.25.4-.13.14-.27.31-.38.42-.13.13-.26.27-.11.53.15.26.66 1.09 1.42 1.76.98.87 1.8 1.14 2.06 1.27.26.13.41.11.56-.06.16-.18.65-.75.82-1.01.17-.26.34-.21.57-.13.23.08 1.46.69 1.72.82.26.13.43.19.49.3.06.11.06.63-.16 1.25z"/></svg>
+          Konsultasi
+        </a>
+      </div>
+    </div>
+  </nav>
+
+<script>
+  const templates = [
+    { id: 'ajm2', cat: 'adat', name: 'Art Jawa Merah 2', badge: 'Gratis Template Story IG', price: 350000, promo: 149000, grad: ['#7A2E2E','#C9A227'], cover: 'Andi & Sari' },
+    { id: 'balikeemasan', cat: 'adat', name: 'Art Bali Keemasan', badge: null, price: 380000, promo: 179000, grad: ['#3B1F1F','#C9A227'], cover: 'Wayan & Kadek' },
+    { id: 'minimalmodern', cat: 'nonadat', name: 'Minimal Modern', badge: 'Gratis Template Story IG', price: 250000, promo: 99000, grad: ['#3F4F42','#5C6E5F'], cover: 'Dimas & Rani' },
+    { id: 'elegantbotanical', cat: 'nonadat', name: 'Elegant Botanical', badge: null, price: 280000, promo: 129000, grad: ['#22352A','#8AA37C'], cover: 'Bagas & Nadia' },
+    { id: 'royalivory', cat: 'exclusive', name: 'Royal Ivory', badge: null, price: 550000, promo: 299000, grad: ['#16231C','#E4C567'], cover: 'Farrel & Tania' },
+    { id: 'emeraldnightfall', cat: 'exclusive', name: 'Emerald Nightfall', badge: 'Gratis Template Story IG', price: 600000, promo: 329000, grad: ['#0F1F16','#2E6B4F'], cover: 'Yusuf & Aisyah' },
+    { id: 'storypastel', cat: 'storyig', name: 'Story Aesthetic Pastel', badge: null, price: 120000, promo: 59000, grad: ['#D9C9A3','#F3E7D3'], cover: 'Reza & Putri' },
+    { id: 'storycinematic', cat: 'storyig', name: 'Story Cinematic Frame', badge: null, price: 130000, promo: 65000, grad: ['#1A1A1A','#7A2E2E'], cover: 'Alief & Nabila' },
+  ];
+
+  const rupiah = n => 'Rp' + n.toLocaleString('id-ID');
+
+  function phoneScreen(t) {
+    return `
+      <div class="phone-frame flex-1 relative overflow-hidden" style="background: linear-gradient(155deg, ${t.grad[0]}, ${t.grad[1]})">
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-2">
+          <p class="font-mono uppercase tracking-[0.15em] text-[8px] text-white/70 mb-1">The Wedding Of</p>
+          <p class="font-display italic text-white text-sm leading-tight">${t.cover}</p>
+        </div>
+      </div>`;
+  }
+
+  function card(t, i) {
+    const discount = Math.round((1 - t.promo / t.price) * 100);
+    return `
+    <article class="fade-up rounded-2xl border border-ink/10 bg-white/70 overflow-hidden" data-cat="${t.cat}" style="transition-delay:${(i % 6) * 60}ms">
+      <div class="p-4 flex gap-2 bg-ink/5">
+        ${phoneScreen(t)}
+        ${phoneScreen({...t, cover: 'Sabtu, 12 Sept 2026'})}
+      </div>
+      <div class="p-5">
+        ${t.badge ? `<span class="inline-block text-[11px] font-medium text-maroon border border-maroon/30 bg-maroon/5 rounded-full px-2.5 py-0.5 mb-2">${t.badge}</span>` : ''}
+        <h3 class="font-display text-lg mb-1">${t.name}</h3>
+        <div class="flex items-baseline gap-2 mb-4">
+          <span class="price-strike text-sm text-ink/40">${rupiah(t.price)}</span>
+          <span class="font-mono text-base font-medium">${rupiah(t.promo)}</span>
+          <span class="text-[11px] text-sage">hemat ${discount}%</span>
+        </div>
+        <div class="flex gap-2">
+          <a href="#" class="flex-1 text-center text-sm border border-ink/15 rounded-full py-2 hover:border-ink transition-colors">Lihat</a>
+          <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20order%20tema%20${encodeURIComponent(t.name)}" class="flex-1 text-center text-sm bg-ink text-paper rounded-full py-2 hover:bg-inksoft transition-colors">Order</a>
+        </div>
+      </div>
+    </article>`;
+  }
+
+  const grid = document.getElementById('grid');
+  const countLabel = document.getElementById('countLabel');
+
+  function render(cat) {
+    const items = cat === 'semua' ? templates : templates.filter(t => t.cat === cat);
+    grid.innerHTML = items.map(card).join('');
+    countLabel.textContent = `${items.length} desain`;
+    requestAnimationFrame(() => {
+      grid.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+
+  document.getElementById('filterBar').addEventListener('click', (e) => {
+    const btn = e.target.closest('.cat-chip');
+    if (!btn) return;
+    document.querySelectorAll('.cat-chip').forEach(b => b.dataset.active = 'false');
+    btn.dataset.active = 'true';
+    render(btn.dataset.cat);
+  });
+
+  render('semua');
+</script>
+</body>
+</html>
